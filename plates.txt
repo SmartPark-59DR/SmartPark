@@ -1,0 +1,6 @@
+
+WWY86666,Samochód osobowy
+WWY21376,Samochód osobowy
+WN88888,Samochód osobowy
+WWY88881,Inne
+WPU44421,Samochód osobowy

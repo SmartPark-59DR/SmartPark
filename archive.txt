@@ -1,0 +1,9 @@
+
+WWY86666 ,Samochód osobowy,4,15,75.0,0.0
+WWY86666 ,Samochód osobowy,7,4,20.0,0.0
+WWY86666 ,Samochód osobowy,1,1,5.0,0.0
+WWY21376 ,Samochód osobowy,5,1,5.0,0.0
+WPU44421 ,Samochód osobowy,1,1,5.0,0.0
+WN88888 ,Samochód osobowy,1,1,5.0,0.0
+WPU44421 ,Samochód osobowy,8,1,5.0,0.0
+WWY86666 ,Samochód osobowy,1,1,5.0,30.0
