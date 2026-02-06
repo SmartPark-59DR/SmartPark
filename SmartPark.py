@@ -684,10 +684,11 @@ class SmartParkApp:
 
         tk.Button(window, text="Reset archiwum", command=reset_archive).pack(pady=10)
 
-"""Punkt sartowy programu, w którym uruchamiana jest aplikacja"""
+"""Punkt startowy programu, w którym uruchamiana jest aplikacja"""
 def main():
     app = SmartParkApp(capacity=10)
     app.run()
 
 if __name__ == "__main__":
+
     main()
