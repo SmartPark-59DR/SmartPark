@@ -6,6 +6,7 @@ import re
 import time
 import math
 
+"""Wykonał MS"""
 """Funkcja czytająca plik tekstowy z obsługą różnych kodowań"""
 
 def encode(filename):
@@ -26,7 +27,7 @@ def encode(filename):
     except Exception:
         return []
 
-
+"""Wykonał MS"""
 """Klasa abstrakcyjna Vehicle reprezentująca pojazd"""
 
 class Vehicle(ABC):
@@ -57,6 +58,7 @@ class Vehicle(ABC):
     def __str__(self):
         return f"{self.get_plate()} ({self.get_type()})"
 
+"""Wykonał JM"""
 """Klasa pojazdów"""
 class Car(Vehicle):
     def get_type(self) -> str:
@@ -77,6 +79,7 @@ class Inne(Vehicle):
     def get_type(self) -> str:
         return "Inne"
 
+"""Wykonał MS"""
 """Fabryka obiektów"""
 class VehicleFactory:
     _map = {
@@ -95,6 +98,7 @@ class VehicleFactory:
         return cls(plate)
 
 
+"""Wykonał JM"""
 """Warstwa dostępu do danych z plików tekstowych"""
 
 """Klasa zajmująca się plikiem plates.txt, w którym przechowywane są zarejestrowane numery i typy pojazdów"""
@@ -134,7 +138,7 @@ class PlateData:
     def get_plate_types():
         return {p: t for p, t in PlateData.get_all_plates()}
 
-
+"""Wykonał JM"""
 """Klasa zajmująca się plikiem sessions.txt, która przechowuje aktywne sesje parkowania"""
 class SessionsData:
     File = "sessions.txt"
@@ -209,6 +213,7 @@ class SessionsData:
                 f.write(i + "\n")
         return removed
 
+"""Wykonał JM"""
 """Klasa zajmująca się plikiem archive.txt, w którym zapisywane są zakończone parkowania"""
 class ParkingArchive:
     File = "archive.txt"
@@ -238,7 +243,7 @@ class ParkingArchive:
         with open(ParkingArchive.File, "w", encoding="utf-8") as f:
             pass
 
-
+"""Wykonał MS"""
 """Klasa reprezentująca logikę miejsc parkingowych, dostępność i statystyki obciążenia"""
 class Parking:
     def __init__(self, capacity=10):
@@ -369,7 +374,7 @@ class Parking:
         with open(self._stats_file, "w", encoding="utf-8") as f:
             pass
 
-
+"""Wykonał JM"""
 """Klasa odpowiedzialna za zarządzanie cennikiem opłat za parkowanie"""
 class Pricing:
     """Konstruktor klasy, który inicjalizuje cennik opłat za parkowanie"""
@@ -393,6 +398,7 @@ class Pricing:
     def calculate_cost(self, vehicle_type: str, hours: int) -> float:
         return self.get_price(vehicle_type) * hours
 
+""" Wykonał MS"""
 """Klasa reprezentująca pojedynczą sesję parkowania"""
 class ParkingSession:
     """Konstruktor klasy, który inicjalizuje atrybuty obiektu - numer rejestracyjny, typ pojazdu, liczbę godzin parkowania,
@@ -414,6 +420,7 @@ class ParkingSession:
         penalty = extra_hours * (2 * pricing.get_price(self.vehicle_type))
         return base_cost, penalty
 
+"""Wykonał JM"""
 """Klasa łącząca logikę aplikacji z GUI"""
 class SmartParkApp:
     """Konstruktor klasy, który inicjalizuje główny system parkingowy"""
@@ -521,6 +528,7 @@ class SmartParkApp:
 
         tk.Button(window, text="Przydziel", command=assign).pack(pady=10)
 
+    """Wykonał MS"""
     """Metoda klasy, która umożliwia zwolnienie miejsca parkingowego, rozliczenie opłaty i zapis do archiwum"""
     def release_spot(self):
         window = tk.Toplevel(self.root)
@@ -605,6 +613,7 @@ class SmartParkApp:
 
         tk.Button(window, text="Zwolnij", command=release).pack(pady=8)
 
+    """Wykonał JM"""
     """Metoda, która umożliwia sprawdzenie i wyświetlenie aktualnej dostępności miejsc parkingowych"""
     def check_availability(self):
         status = ""
@@ -649,6 +658,7 @@ class SmartParkApp:
             text += f"{vehicle_type}: {price} zł\n"
         messagebox.showinfo("Cennik", text)
 
+    """Wykonał MS"""
     """Metoda, która umożliwia wyświetlenie archiwum wszystkich zakończonych parkowań 
     oraz umożliwia jego wyczyszczenie"""
     def show_archive(self):
@@ -692,3 +702,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
